@@ -1,0 +1,12 @@
+# Blueprint Render — identique à ton DVF (onrender.com)
+# Render fournit automatiquement la variable PORT ; le serveur la lit.
+services:
+  - type: web
+    name: mcp-conformite-ia
+    runtime: docker
+    plan: free
+    envVars:
+      - key: MCP_TRANSPORT
+        value: streamable-http
+      - key: HOST
+        value: 0.0.0.0
