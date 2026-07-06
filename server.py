@@ -32,6 +32,11 @@ mcp = FastMCP(
     "conformite_ia_mcp",
     host=os.environ.get("HOST", "0.0.0.0"),
     port=int(os.environ.get("PORT", "8000")),
+    # Mode recommande pour les serveurs distants / passerelles (MCP Hive) :
+    # requetes independantes (pas de session a maintenir) + reponses JSON
+    # (le client n'a pas besoin d'accepter text/event-stream).
+    stateless_http=True,
+    json_response=True,
 )
 
 
